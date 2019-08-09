@@ -1,0 +1,152 @@
+<html>
+	<head>
+		<title>phpSyllable</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<h1>Generátor slov</h1>
+		<p>Rozbije zadaný text na (něco jako) slabiky a složí z nich slova, co vypadají jako skutečná slova, ale nejsou (a když, tak jenom náhodou). Dá se dost dobře použít i na vytváření jmen</p>
+		<p>Postup:
+			<ol>
+				<li>Zadej text, ze kterého chceš dělat slova (čím delší, tím lepší)</li>
+				<li>Vyber jazyk, který by to mělo připomínat (zas takový rozdíl to není, záleží hlavně na textu)</li>
+				<li>Vyber si, jak dlouhá slova mají být a kolik jich chceš</li>
+				<li>Zmáčkni "Generuj" a div se!</li>
+			</ol>
+		</p>
+
+		<form method="post" action="">
+			
+			<div>
+				<label>
+					Jazyk:
+					<select name="language">
+													<option value="pa" >pa</option>
+													<option value="de-1996" >de-1996</option>
+													<option value="pms" >pms</option>
+													<option value="it" >it</option>
+													<option value="sv" >sv</option>
+													<option value="en-us" >en-us</option>
+													<option value="zh-latn-pinyin" >zh-latn-pinyin</option>
+													<option value="cy" >cy</option>
+													<option value="gl" >gl</option>
+													<option value="is" >is</option>
+													<option value="pt" >pt</option>
+													<option value="grc" >grc</option>
+													<option value="ta" >ta</option>
+													<option value="ia" >ia</option>
+													<option value="sh-latn" >sh-latn</option>
+													<option value="th" >th</option>
+													<option value="kmr" >kmr</option>
+													<option value="as" >as</option>
+													<option value="eo" >eo</option>
+													<option value="hi" >hi</option>
+													<option value="es" >es</option>
+													<option value="hr" >hr</option>
+													<option value="et" >et</option>
+													<option value="af" >af</option>
+													<option value="hu" >hu</option>
+													<option value="sh-cyrl" >sh-cyrl</option>
+													<option value="nl" >nl</option>
+													<option value="mr" >mr</option>
+													<option value="da" >da</option>
+													<option value="hsb" >hsb</option>
+													<option value="el-polyton" >el-polyton</option>
+													<option value="de-ch-1901" >de-ch-1901</option>
+													<option value="nb" >nb</option>
+													<option value="sl" >sl</option>
+													<option value="sk" >sk</option>
+													<option value="de-1901" >de-1901</option>
+													<option value="mn-cyrl-x-lmc" >mn-cyrl-x-lmc</option>
+													<option value="tr" >tr</option>
+													<option value="eu" >eu</option>
+													<option value="en-gb" >en-gb</option>
+													<option value="la" >la</option>
+													<option value="rm" >rm</option>
+													<option value="fur" >fur</option>
+													<option value="lt" >lt</option>
+													<option value="hy" >hy</option>
+													<option value="or" >or</option>
+													<option value="kn" >kn</option>
+													<option value="ru" >ru</option>
+													<option value="uk" >uk</option>
+													<option value="sr-cyrl" >sr-cyrl</option>
+													<option value="no" >no</option>
+													<option value="sa" >sa</option>
+													<option value="id" >id</option>
+													<option value="de" >de</option>
+													<option value="gu" >gu</option>
+													<option value="el-monoton" >el-monoton</option>
+													<option value="bn" >bn</option>
+													<option value="lv" >lv</option>
+													<option value="bg" >bg</option>
+													<option value="fr" >fr</option>
+													<option value="ro" >ro</option>
+													<option value="fi" >fi</option>
+													<option value="mn-cyrl" >mn-cyrl</option>
+													<option value="ka" >ka</option>
+													<option value="cop" >cop</option>
+													<option value="ga" >ga</option>
+													<option value="cs" selected="selected">cs</option>
+													<option value="ml" >ml</option>
+													<option value="pl" >pl</option>
+													<option value="ca" >ca</option>
+													<option value="mul-ethi" >mul-ethi</option>
+													<option value="te" >te</option>
+													<option value="tk" >tk</option>
+													<option value="la-x-classic" >la-x-classic</option>
+													<option value="nn" >nn</option>
+											</select>
+				</label>
+			</div>
+			<div>
+				<label>
+					Zdrojový text:
+					<textarea name="source" cols="80" rows="10">Tady napíšete náhodný text. </textarea>
+				</label>
+			</div>
+			
+			<div>
+				<div>
+					<label>
+					Počet slov
+						<input type="number" name="words" value="10" />
+					</label>
+				</div>
+				<div>
+					<label>
+					Minimálně slabik
+						<input type="number" name="min" value="2" />
+					</label>
+				</div>
+				<div>
+					<label>
+					Maximálně slabik
+						<input type="number" name="max" value="5" />
+					</label>
+				</div>
+				<div>
+					<button>Generuj</button>
+				</div>
+			</div>
+			<footer>
+			Based on <a href="https://github.com/vanderlee/phpSyllable">phpSyllable</a>, witch is based on Frank Liang's algorithm used in TeX.
+			</footer>
+		</form>
+		<hr/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5698604-12', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>
